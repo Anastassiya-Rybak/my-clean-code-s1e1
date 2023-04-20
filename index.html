@@ -5,44 +5,47 @@
   <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 </head>
 <body>
-  <header class="aaa">
-    <img src="./eisenhower-matrix.jpg">
-    <a class="more_inf" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+  <header class="header">
+    <img class="header__img" src="./eisenhower-matrix.jpg">
+    <a class="header__link-details" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
   </header>
   <main>
-    <article class="centered-main-page-element">
-      <section id="top-section-for-adding-element-to-list">
-        <label for="new-task">Add Item</label>
-        <div class="task-row-wrapper">
-          <input id="new-task"class="task" type="text">
-          <button>Add</button>
+    <article class="page-content">
+      <section id="add-new-task-container">
+        <label for="new-task" class="add-new-task-container__title">Add Item</label>
+        <div class="add-new-task-container__tap-and-add">
+          <input id="new-task"class="add-new-task-container__input task" type="text">
+          <button class="add-new-task-container__add-btn">Add</button>
         </div>
       </section>
-      <section>
-        <h3>Todo</h3>
-        <ul id="incomplete-tasks">
-          <li>
-            <input type="checkbox"><label class="task">Pay Bills</label>
-            <input type="text" class="task">
-            <button class="edit">Edit</button>
-            <button class="delete"><img src="./remove.svg"></button>
+      <section class="incomplete-task-list-container">
+        <h3 class="incomplete-task-list-container__title">Todo</h3>
+        <ul id="incomplete-task-list-container__items">
+          <li class="incomplete-task-list-container__items__item">
+            <input class="incomplete-task-list-container__items__item__check-place" type="checkbox">
+            <label class="incomplete-task-list-container__items__item__content task">Pay Bills</label>
+            <input type="text" class="incomplete-task-list-container__items__item__to-edit-form task">
+            <button class="incomplete-task-list-container__items__item__edit-btn edit">Edit</button>
+            <button class="incomplete-task-list-container__items__item__delete-btn delete"><img src="./remove.svg"></button>
           </li>
-          <li class="edit-mode">
-            <input type="checkbox"><label class="task">Go Shopping</label>
-            <input type="text" value="go shopping" class="task">
-            <button class="edit">Save</button>
-            <button class="delete"><img src="./remove.svg"></button>
+          <li class="incomplete-task-list-container__items__item edit-mode">
+            <input class="incomplete-task-list-container__items__item__check-place" type="checkbox">
+            <label class="incomplete-task-list-container__items__item__content task">Go Shopping</label>
+            <input type="text" value="go shopping" class="incomplete-task-list-container__items__item__to-edit-form task">
+            <button class="incomplete-task-list-container__items__item__edit-btn edit">Save</button>
+            <button class="incomplete-task-list-container__items__item__delete-btn delete"><img src="./remove.svg"></button>
           </li>
         </ul>
       </section>
-      <section>
-        <h3>Completed</h3>
-        <ul id="completed-tasks">
-          <li>
-            <input type="checkbox" checked><label class="task">See the Doctor</label>
-            <input type="text" class="task">
-            <button class="edit">Edit</button>
-            <button class="delete"><img src="./remove.svg"></button>
+      <section class="completed-task-list-container">
+        <h3 class="completed-task-list-container__title">Completed</h3>
+        <ul id="completed-tasks" class="completed-task-list-container__items">
+          <li class="completed-task-list-container__items__item">
+            <input class="completed-task-list-container__items__item__check-place" type="checkbox" checked>
+            <label class="completed-task-list-container__items__item__content task">See the Doctor</label>
+            <input type="text" class="completed-task-list-container__items__item__to-edit-form task">
+            <button class="completed-task-list-container__items__item__edit-btn edit">Edit</button>
+            <button class="completed-task-list-container__items__item__delete-btn delete"><img src="./remove.svg"></button>
           </li>
         </ul>
       </section>
