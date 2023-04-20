@@ -1,5 +1,5 @@
 /* Basic Style */
-body {
+.page {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -34,7 +34,10 @@ body {
 .add-new-task-container__tap-and-add {
   display: flex;
 }
-ul {
+
+/* последующая стилизация (ul, li, h3, input, button) считается намеренным сбросом дефолтных стилей(согласно руковолству),
+ поэтому оставляю стилизацию по тегам*/
+ul { 
   margin:0;
   padding: 0px;
 }
@@ -44,7 +47,11 @@ li, h3 {
 input,button{
   outline:none;
 }
-button {
+.add-new-task-container__add-btn,
+.incomplete-task-list-container__items__item__edit-btn,
+.incomplete-task-list-container__items__item__delete-btn,
+.completed-task-list-container__items__item__edit-btn,
+.completed-task-list-container__items__item__delete-btn {
   background: none;
   border: 0px;
   color: #888;
@@ -53,12 +60,17 @@ button {
   font-family: Lato, sans-serif;
   cursor: pointer;
 }
-button:hover {
+.add-new-task-container__add-btn:hover,
+.incomplete-task-list-container__items__item__edit-btn:hover,
+.incomplete-task-list-container__items__item__delete-btn:hover,
+.completed-task-list-container__items__item__edit-btn:hover,
+.completed-task-list-container__items__item__delete-btn:hover {
   color: #3a3a3a;
 }
 /* Heading */
-h3,
-label[for="new-task"] {
+.incomplete-task-list-container__title,
+.completed-task-list-container__title,
+.add-new-task-container__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -67,7 +79,9 @@ label[for="new-task"] {
   margin: 0;
   text-transform: uppercase;
 }
-input[type="text"] {
+.incomplete-task-list-container__items__item__to-edit-form,
+.completed-task-list-container__items__item__to-edit-form,
+.add-new-task-container__input {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -79,21 +93,24 @@ input[type="text"] {
   font-family: Lato, sans-serif;
   color: #888;
 }
-input[type="text"]:focus {
+.incomplete-task-list-container__items__item__to-edit-form:focus,
+.completed-task-list-container__items__item__to-edit-form:focus,
+.add-new-task-container__input:focus {
   color: #333;
 }
 
 /* New Task */
-label[for="new-task"] {
+.add-new-task-container__title {
   display: block;
   margin: 0 0 20px;
 }
-input#new-task {
+.add-new-task-container__input {
   width: 318px;
 }
 
 /* Task list */
-li {
+.incomplete-task-list-container__items__item,
+.completed-task-list-container__items__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -102,39 +119,46 @@ li {
   justify-content: space-between;
   align-items: center;
 }
-li > * {
+.incomplete-task-list-container__items__item > *,
+.completed-task-list-container__items__item > * {
   vertical-align: middle;
 }
 
-li > input[type="checkbox"] {
+.incomplete-task-list-container__items__item__check-place,
+.completed-task-list-container__items__item__check-place {
   margin: 0 10px;
 }
-li > label {
+.incomplete-task-list-container__items__item__content,
+.completed-task-list-container__items__item__content {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
-li >    input[type="text"] {
+.completed-task-list-container__items__item__to-edit-form,
+.incomplete-task-list-container__items__item__to-edit-form {
   width: 226px
 }
-button.delete img {
+.incomplete-task-list-container__items__item__delete-btn img,
+.completed-task-list-container__items__item__delete-btn img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-button.delete img:hover {
+.incomplete-task-list-container__items__item__delete-btn img:hover,
+.completed-task-list-container__items__item__delete-btn img:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-ul#completed-tasks label {
+.completed-task-list-container__items__item__content {
   text-decoration: line-through
   color: #888;
 }
 
 /* Edit Task */
-ul li input[type= "text"] {
+.completed-task-list-container__items__item__to-edit-form,
+.incomplete-task-list-container__items__item__to-edit-form {
   display:none
 }
 
@@ -143,6 +167,6 @@ ul li.edit-mode input[type= "text"] {
   width:224px
 }
 
-ul li.edit-mode label {
+.edit-mode label {
   display:none;
 }
