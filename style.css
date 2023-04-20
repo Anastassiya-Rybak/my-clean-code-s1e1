@@ -64,7 +64,8 @@ button{
 .incomplete-task-list-container__items__item__edit-btn,
 .incomplete-task-list-container__items__item__delete-btn,
 .completed-task-list-container__items__item__edit-btn,
-.completed-task-list-container__items__item__delete-btn {
+.completed-task-list-container__items__item__delete-btn,
+button {
   background: none;
   border: 0px;
   color: #888;
@@ -94,10 +95,9 @@ button{
   margin: 0;
   text-transform: uppercase;
 }
-
-.incomplete-task-list-container__items__item__to-edit-form,
-.completed-task-list-container__items__item__to-edit-form,
-.add-new-task-container__input {
+/* последующая стилизация (input) считается намеренным сбросом дефолтных стилей(согласно руковолству),
+ поэтому оставляю стилизацию по тегам*/
+input[type="text"] {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -110,9 +110,7 @@ button{
   color: #888;
 }
 
-.incomplete-task-list-container__items__item__to-edit-form:focus,
-.completed-task-list-container__items__item__to-edit-form:focus,
-.add-new-task-container__input:focus {
+input[type="text"]:focus {
   color: #333;
 }
 
@@ -160,16 +158,14 @@ button{
 .incomplete-task-list-container__items__item__to-edit-form {
   width: 226px;
 }
-
-.incomplete-task-list-container__items__item__delete-btn img,
-.completed-task-list-container__items__item__delete-btn img {
+/* обращение к кнопкам не по БЭМ селекторам важно для работоспособности js */
+button.delete img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.incomplete-task-list-container__items__item__delete-btn img:hover,
-.completed-task-list-container__items__item__delete-btn img:hover {
+button.delete img:hover {
   transform: rotateZ(0);
 }
 
