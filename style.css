@@ -17,11 +17,11 @@
   font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 
   .header { text-align: center;
   }
-  
+
 }
 .page-content {
   display: block;
@@ -40,14 +40,14 @@
 /* последующая стилизация (ul, li, h3, input, button) считается намеренным сбросом дефолтных стилей(согласно руковолству),
  поэтому оставляю стилизацию по тегам*/
 ul { 
-  margin:0;
+  margin: 0;
   padding: 0px;
 }
 li, h3 {
-  list-style:none;
+  list-style: none;
 }
 input,button{
-  outline:none;
+  outline: none;
 }
 .add-new-task-container__add-btn,
 .incomplete-task-list-container__items__item__edit-btn,
@@ -161,14 +161,14 @@ input,button{
 /* Edit Task */
 .completed-task-list-container__items__item__to-edit-form,
 .incomplete-task-list-container__items__item__to-edit-form {
-  display:none
+  display: none
 }
 
 ul li.edit-mode input[type= "text"] {
-  display:inline-block;
-  width:224px
+  display: inline-block;
+  width: 224px
 }
 
 .edit-mode label {
-  display:none;
+  display: none;
 }
