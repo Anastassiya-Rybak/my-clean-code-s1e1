@@ -13,6 +13,9 @@ var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-task-list-container__items");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
+document.querySelector('.add-new-task-container__title').addEventListener('click', ()=>{
+  document.getElementById('new-task').focus();
+});
 
 //New task list item
 var createNewTaskElement=function(taskString){
