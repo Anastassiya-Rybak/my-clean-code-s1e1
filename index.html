@@ -12,50 +12,50 @@
   </header>
   <main>
     <article class="page-content">
-      <section id="add-new-task-container">
-        <h3 class="add-new-task-container__title">Add Item</h3>
-        <div class="add-new-task-container__tap-and-add">
-          <input id="new-task" class="add-new-task-container__input task" 
+      <section class="page-content__section section">
+        <h3 class="section__title">Add Item</h3>
+        <div class="section__add-item-container">
+          <input id="new-task" class="section__task-input task-input" 
               type="text">
-          <button class="add-new-task-container__add-btn">Add</button>
+          <button class="section__add-btn">Add</button>
         </div>
       </section>
-      <section class="incomplete-task-list-container">
-        <h3 class="incomplete-task-list-container__title">Todo</h3>
-        <ul id="incomplete-task-list-container__items">
-          <li class="incomplete-task-list-container__items__item">
-            <input class="incomplete-task-list-container__items__item__check-place" 
+      <section class="page-content__section section">
+        <h3 class="section__title">Todo</h3>
+        <ul class="section__incomplete-items">
+          <li class="section__incomplete-item incomplete-item">
+            <input class="incomplete-item__check-place" 
                 type="checkbox">
-            <label class="incomplete-task-list-container__items__item__content task">Pay Bills</label>
+            <label class="incomplete-item__content task-input">Pay Bills</label>
             <input type="text" 
-                class="incomplete-task-list-container__items__item__to-edit-form task">
-            <button class="incomplete-task-list-container__items__item__edit-btn edit">Edit</button>
-            <button class="incomplete-task-list-container__items__item__delete-btn delete">
+                class="incomplete-item__to-edit-form task-input">
+            <button class="incomplete-item__edit-btn edit-btn">Edit</button>
+            <button class="incomplete-item__delete-btn delete-btn">
               <img src="./remove.svg" alt="Delete the task">
             </button>
           </li>
-          <li class="incomplete-task-list-container__items__item edit-mode">
-            <input class="incomplete-task-list-container__items__item__check-place" type="checkbox">
-            <label class="incomplete-task-list-container__items__item__content task">Go Shopping</label>
-            <input type="text" value="go shopping" 
-                class="incomplete-task-list-container__items__item__to-edit-form task">
-            <button class="incomplete-task-list-container__items__item__edit-btn edit">Save</button>
-            <button class="incomplete-task-list-container__items__item__delete-btn delete">
+          <li class="section__incomplete-item incomplete-item incomplete-item_edit-mode">
+            <input class="incomplete-item__check-place" type="checkbox">
+            <label class="incomplete-item__content task-input">Go Shopping</label>
+            <input type="text" value="Go Shopping" 
+                class="incomplete-item__to-edit-form task-input">
+            <button class="incomplete-item__edit-btn edit-btn">Save</button>
+            <button class="incomplete-item__delete-btn delete-btn">
               <img src="./remove.svg" alt="Delete the task">
             </button>
           </li>
         </ul>
       </section>
-      <section class="completed-task-list-container">
-        <h3 class="completed-task-list-container__title">Completed</h3>
-        <ul id="completed-tasks" class="completed-task-list-container__items">
-          <li class="completed-task-list-container__items__item">
-            <input class="completed-task-list-container__items__item__check-place" 
+      <section class="page-content__section section">
+        <h3 class="section__title">Completed</h3>
+        <ul id="completed-tasks" class="section__completed-items">
+          <li class="section__completed-item completed-item">
+            <input class="completed-item__check-place" 
                 type="checkbox" checked>
-            <label class="completed-task-list-container__items__item__content task">See the Doctor</label>
-            <input type="text" class="completed-task-list-container__items__item__to-edit-form task">
-            <button class="completed-task-list-container__items__item__edit-btn edit">Edit</button>
-            <button class="completed-task-list-container__items__item__delete-btn delete">
+            <label class="completed-item__content task-input">See the Doctor</label>
+            <input type="text" class="completed-item__to-edit-form task-input">
+            <button class="completed-item__edit-btn edit-btn">Edit</button>
+            <button class="completed-item__delete-btn delete-btn">
               <img src="./remove.svg" alt="Delete the task">
             </button>
           </li>
