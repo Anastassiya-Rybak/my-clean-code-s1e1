@@ -17,7 +17,7 @@
 }
 
 .header__link-details {
-  font-family: fantasy, cursive;
+  font-family: 'fantasy', cursive;
 }
 
 @media (max-width: 768px) {
@@ -33,14 +33,15 @@
   margin: 0 auto 0;
 }
 
-.task {
+.task-input {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
 
-.add-new-task-container__tap-and-add {
+.section__add-item-container {
   display: flex;
+  margin-top: 20px;
 }
 
 /* последующая стилизация (ul, li, h3, input, button) считается намеренным сбросом дефолтных стилей(согласно руковолству),
@@ -60,12 +61,9 @@ button{
   outline: none;
 }
 
-.add-new-task-container__add-btn,
-.incomplete-task-list-container__items__item__edit-btn,
-.incomplete-task-list-container__items__item__delete-btn,
-.completed-task-list-container__items__item__edit-btn,
-.completed-task-list-container__items__item__delete-btn,
-button {
+.section__add-btn,
+.edit-btn,
+.delete-btn {
   background: none;
   border: 0px;
   color: #888;
@@ -75,18 +73,14 @@ button {
   cursor: pointer;
 }
 
-.add-new-task-container__add-btn:hover,
-.incomplete-task-list-container__items__item__edit-btn:hover,
-.incomplete-task-list-container__items__item__delete-btn:hover,
-.completed-task-list-container__items__item__edit-btn:hover,
-.completed-task-list-container__items__item__delete-btn:hover {
+.section__add-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
   color: #3a3a3a;
 }
 
 /* Heading */
-.incomplete-task-list-container__title,
-.completed-task-list-container__title,
-.add-new-task-container__title {
+.section__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -95,7 +89,7 @@ button {
   margin: 0;
   text-transform: uppercase;
 }
-/* последующая стилизация (input) считается намеренным сбросом дефолтных стилей(согласно руковолству),
+/* последующая стилизация (input) считается намеренным сбросом дефолтных стилей(согласно руководству),
  поэтому оставляю стилизацию по тегам*/
 input[type="text"] {
   margin: 0;
@@ -115,18 +109,13 @@ input[type="text"]:focus {
 }
 
 /* New Task */
-.add-new-task-container__title {
-  display: block;
-  margin: 0 0 20px;
-}
-
-.add-new-task-container__input {
+.section__task-input {
   width: 318px;
 }
 
 /* Task list */
-.incomplete-task-list-container__items__item,
-.completed-task-list-container__items__item {
+.incomplete-item,
+.completed-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -136,56 +125,58 @@ input[type="text"]:focus {
   align-items: center;
 }
 
-.incomplete-task-list-container__items__item > *,
-.completed-task-list-container__items__item > * {
+.incomplete-item > *,
+.completed-item > * {
   vertical-align: middle;
 }
 
-.incomplete-task-list-container__items__item__check-place,
-.completed-task-list-container__items__item__check-place {
+.incomplete-item__check-place,
+.completed-item__check-place {
   margin: 0 10px;
 }
 
-.incomplete-task-list-container__items__item__content,
-.completed-task-list-container__items__item__content {
+.incomplete-item__content,
+.completed-item__content {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.completed-task-list-container__items__item__to-edit-form,
-.incomplete-task-list-container__items__item__to-edit-form {
+.completed-item__to-edit-form,
+.incomplete-item__to-edit-form {
   width: 226px;
 }
-/* обращение к кнопкам не по БЭМ селекторам важно для работоспособности js */
-button.delete img {
+
+.delete-btn img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-button.delete img:hover {
+.delete-btn img:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-.completed-task-list-container__items__item__content {
+.completed-item__content {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.completed-task-list-container__items__item__to-edit-form,
-.incomplete-task-list-container__items__item__to-edit-form {
+.completed-item__to-edit-form,
+.incomplete-item__to-edit-form {
   display: none;
 }
 
-ul li.edit-mode input[type= "text"] {
+.incomplete-item_edit-mode input[type= "text"],
+.completed-item_edit-mode input[type= "text"] {
   display: inline-block;
   width: 224px;
 }
 
-.edit-mode label {
+.incomplete-item_edit-mode label,
+.completed-item_edit-mode label {
   display: none;
 }
